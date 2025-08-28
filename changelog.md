@@ -9,3 +9,6 @@
 
 28.08.2025
 -Updated changelog
+-Images Added
+-About update
+-Contact update
