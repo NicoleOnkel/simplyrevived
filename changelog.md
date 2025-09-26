@@ -19,3 +19,4 @@
 -Books and collections update
 -Cafe and Menu Update
 -Events page Update
+-About page update
