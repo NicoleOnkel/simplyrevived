@@ -49,29 +49,30 @@ nav ul li a.active {
 
 /* ===== Hero Section ===== */
 .hero {
-  background: url("img/store.png") no-repeat center center/cover;
+  background: url("images/banner.jpg") no-repeat center center/cover;
   color: white;
+  display: flex;               /* flexbox for centering overlay */
+  justify-content: center;     /* horizontal center */
+  align-items: center;         /* vertical center */
   text-align: center;
-  padding: 100px 20px;
+  height: 80vh;                /* hero height relative to viewport */
+  padding: 0 20px;
   position: relative;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.1); /* overlay for contrast */
+  background-color: rgba(0, 0, 0, 0.45); /* overlay for contrast */
   padding: 60px 20px;
   border-radius: 10px;
-  display: inline-block;
-  max-width: 900px; /* constrain width on large screens */
-  width: 90%;       /* flexible for smaller screens */
-  margin: 0 auto;   /* center horizontally */
-  text-align: center; /* center text */
+  max-width: 900px;
+  width: 90%;
 }
 
 /* Hero Overlay Text */
 .hero-overlay h2 {
   font-size: 3rem; /* bigger heading */
   font-weight: bold;
-  text-shadow: 3px 3px 8px rgba(214, 108, 108, 0.8); /* strong contrast */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* strong contrast */
   margin-bottom: 20px;
 }
 
@@ -97,6 +98,7 @@ nav ul li a.active {
   border-radius: 5px;
   margin-top: 10px;
   text-align: center;
+  transition: background 0.3s ease;
 }
 
 .btn:hover {
@@ -178,7 +180,8 @@ footer {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 15px;
+    height: 60vh;
+    padding: 0 15px;
   }
 
   nav ul {
@@ -208,7 +211,8 @@ footer {
 
 @media (max-width: 480px) {
   .hero {
-    padding: 40px 10px;
+    height: 50vh;
+    padding: 0 10px;
   }
 
   .hero-overlay h2 {
