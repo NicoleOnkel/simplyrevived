@@ -1,209 +1,31 @@
-/* ================================
-   Simply Revived - Website Styles
-   ================================ */
-
-/* --- Global Reset --- */
-* {
+/* ===== General Styles ===== */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333333;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-/* --- Body & General Layout --- */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #F5F5DC; /* Warm Beige */
-  color: #2C2C2C;
   line-height: 1.6;
-  font-size: 16px;
+  background-color: #F5F0E6; /* Warm Cream */
 }
 
-/* --- Header & Navigation --- */
-header {
-  background-color: #2C5F2D; /* Deep Green */
-  color: white;
-  padding: 1.5rem;
-  text-align: center;
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  color: #4B3A2A; /* Deep Brown */
+  margin: 10px 0;
 }
 
-header h1 {
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  letter-spacing: 2px;
+p {
+  margin-bottom: 15px;
 }
 
-nav {
-  margin-top: 1rem;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #C9A66B; /* Accent Gold */
-}
-
-/* --- Hero Section --- */
-.hero {
-
-  color: rgb(22, 22, 22);
-  text-align: center;
-  padding: 5rem 2rem;
-}
-
-
-.hero h2 {
-  font-family: 'Georgia', serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* --- Section Styling --- */
-section {
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-section h2 {
-  font-family: 'Georgia', serif;
-  color: #2C5F2D;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-section p {
-  margin-bottom: 1rem;
-}
-
-/* --- Cards (for books, coffee, etc.) --- */
-.card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* --- Buttons --- */
-.btn {
-  display: inline-block;
-  background-color: #8B5E3C; /* Soft Brown */
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #C9A66B; /* Accent Gold */
-  color: #2C2C2C;
-}
-
-/* --- Footer --- */
-footer {
-  background-color: #2C5F2D;
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
-  margin-top: 2rem;
-}
-
-footer p {
-  font-size: 0.9rem;
-}
-
-/* Book Images */
-.book-img {
-  width: 150px;       /* smaller width */
-  height: auto;       /* keep proportions */
-  display: block;
-  margin: 0 auto 10px auto; /* center and add spacing below */
-  border-radius: 5px; /* rounded corners */
-}
-
-/* General Container Styling */
-section {
-  padding: 40px 20px;
-}
-
-.card-grid,
-.menu-grid,
-.event-grid {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* responsive columns */
-  justify-items: center;
-}
-
-/* Book Images */
-.book-img {
-  width: 100%;
-  max-width: 150px; /* scales down on small screens */
-  height: auto;
-  display: block;
-  margin-bottom: 10px;
-  border-radius: 5px;
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #D9822B;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-/* Hero Section */
-.hero {
-  background: url("images/banner.jpg") no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-}
-
-.hero-overlay {
-  background-color: rgba(0,0,0,0.5);
-  padding: 40px 20px;
-  border-radius: 10px;
-  display: inline-block;
-}
-
-/* Header & Navigation */
+/* ===== Header & Navigation ===== */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #F5F0E6;
-  flex-wrap: wrap; /* allows nav to wrap on small screens */
+  background-color: #F5F0E6; /* Warm Cream */
+  flex-wrap: wrap;
 }
 
 nav ul {
@@ -217,28 +39,116 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #333;
+  color: #333333;
   font-weight: bold;
 }
 
-/* Footer */
+nav ul li a.active {
+  color: #D9822B; /* Warm Terracotta for active page */
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  background: url("images/banner.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 60px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #D9822B; /* Warm Terracotta */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #A3B18A; /* Soft Sage on hover */
+}
+
+/* ===== Card Layouts ===== */
+.card-grid,
+.menu-grid,
+.event-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  justify-items: center;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 300px;
+}
+
+/* ===== Book Images ===== */
+.book-img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+  border-radius: 5px;
+}
+
+/* ===== Forms ===== */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+form button {
+  margin-top: 10px;
+}
+
+/* ===== Sections ===== */
+section {
+  padding: 40px 20px;
+}
+
+/* ===== Footer ===== */
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #F5F0E6;
+  background-color: #F5F0E6; /* Warm Cream */
   margin-top: 40px;
+  font-size: 14px;
 }
 
-/* Responsive Typography */
-h1, h2, h3 {
-  margin: 10px 0;
+/* ===== Responsive Media Queries ===== */
+@media (max-width: 1024px) {
+  .card-grid,
+  .menu-grid,
+  .event-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
 }
 
-p {
-  line-height: 1.6;
-}
-
-/* Responsive adjustments with media queries */
 @media (max-width: 768px) {
   .hero {
     padding: 60px 15px;
