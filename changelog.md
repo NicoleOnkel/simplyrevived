@@ -20,3 +20,5 @@
 -Cafe and Menu Update
 -Events page Update
 -About page update
+-Contact page update
+
