@@ -16,3 +16,4 @@
 26.09.2025
 -Stylesheet added
 -Index/home page updated
+-Books and collections update
