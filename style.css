@@ -57,7 +57,7 @@ nav ul li a.active {
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.45); /* overlay for contrast */
+  background-color: rgba(0, 0, 0, 0.1); /* overlay for contrast */
   padding: 60px 20px;
   border-radius: 10px;
   display: inline-block;
@@ -71,7 +71,7 @@ nav ul li a.active {
 .hero-overlay h2 {
   font-size: 3rem; /* bigger heading */
   font-weight: bold;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* strong contrast */
+  text-shadow: 3px 3px 8px rgba(214, 108, 108, 0.8); /* strong contrast */
   margin-bottom: 20px;
 }
 
@@ -97,7 +97,6 @@ nav ul li a.active {
   border-radius: 5px;
   margin-top: 10px;
   text-align: center;
-  transition: background 0.3s ease;
 }
 
 .btn:hover {
