@@ -12,3 +12,7 @@
 -Images Added
 -About update
 -Contact update
+
+26.09.2025
+stylesheet added
+
