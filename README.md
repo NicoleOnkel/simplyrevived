@@ -4,7 +4,7 @@ Nicole Onkel
 ST10497522
 WEDE502W
 
-POE: PART 1
+POE
 
 SIMPLY REVIVED WEBSITE
 
@@ -19,6 +19,11 @@ Change Log:
 -Added content 
    About
 -Updated Readme file
+
+
+Responsive Design 
+
+
 
 
 28.08.2025
@@ -36,7 +41,6 @@ Change Log:
 -About page update
 -Contact page update
 -Images size update
-
 
 
 
