@@ -1,145 +1,121 @@
-/* ================================
-   Simply Revived - Website Styles
-   ================================ */
-
-/* --- Global Reset --- */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* General Container Styling */
+section {
+  padding: 40px 20px;
 }
 
-/* --- Body & General Layout --- */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #F5F5DC; /* Warm Beige */
-  color: #2C2C2C;
-  line-height: 1.6;
-  font-size: 16px;
+.card-grid,
+.menu-grid,
+.event-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* responsive columns */
+  justify-items: center;
 }
 
-/* --- Header & Navigation --- */
-header {
-  background-color: #2C5F2D; /* Deep Green */
+/* Book Images */
+.book-img {
+  width: 100%;
+  max-width: 150px; /* scales down on small screens */
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #D9822B;
   color: white;
-  padding: 1.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 10px;
   text-align: center;
 }
 
-header h1 {
-  font-family: 'Georgia', serif;
-  font-size: 2rem;
-  letter-spacing: 2px;
+/* Hero Section */
+.hero {
+  background: url("images/banner.jpg") no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-nav {
-  margin-top: 1rem;
+.hero-overlay {
+  background-color: rgba(0,0,0,0.5);
+  padding: 40px 20px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Header & Navigation */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #F5F0E6;
+  flex-wrap: wrap; /* allows nav to wrap on small screens */
 }
 
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0;
+  margin: 0;
 }
 
-nav a {
-  color: white;
+nav ul li a {
   text-decoration: none;
+  color: #333;
   font-weight: bold;
-  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #C9A66B; /* Accent Gold */
-}
-
-/* --- Hero Section --- */
-.hero {
-  color: rgb(22, 22, 22);
-  text-align: center;
-  padding: 5rem 2rem;
-}
-
-.hero h2 {
-  font-family: 'Georgia', serif;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* --- Section Styling --- */
-section {
-  padding: 3rem 2rem;
-  max-width: 1100px;
-  margin: auto;
-}
-
-section h2 {
-  font-family: 'Georgia', serif;
-  color: #2C5F2D;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-}
-
-section p {
-  margin-bottom: 1rem;
-}
-
-/* --- Cards (for books, coffee, etc.) --- */
-.card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-/* --- Buttons --- */
-.btn {
-  display: inline-block;
-  background-color: #8B5E3C; /* Soft Brown */
-  color: white;
-  padding: 0.7rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #C9A66B; /* Accent Gold */
-  color: #2C2C2C;
-}
-
-/* --- Footer --- */
+/* Footer */
 footer {
-  background-color: #2C5F2D;
-  color: white;
   text-align: center;
-  padding: 1.5rem;
-  margin-top: 2rem;
+  padding: 20px;
+  background-color: #F5F0E6;
+  margin-top: 40px;
 }
 
-footer p {
-  font-size: 0.9rem;
+/* Responsive Typography */
+h1, h2, h3 {
+  margin: 10px 0;
 }
 
-/* Book Images */
-.book-img {
-  width: 150px;       /* smaller width */
-  height: auto;       /* keep proportions */
-  display: block;
-  margin: 0 auto 10px auto; /* center and add spacing below */
-  border-radius: 5px; /* rounded corners */
+p {
+  line-height: 1.6;
 }
 
+/* Responsive adjustments with media queries */
+@media (max-width: 768px) {
+  .hero {
+    padding: 60px 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .card-grid,
+  .menu-grid,
+  .event-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 10px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
