@@ -21,4 +21,6 @@
 -Events page Update
 -About page update
 -Contact page update
+-Images size update
+
 
