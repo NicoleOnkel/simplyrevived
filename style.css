@@ -134,3 +134,13 @@ footer {
 footer p {
   font-size: 0.9rem;
 }
+
+/* Book Images */
+.book-img {
+  width: 150px;       /* smaller width */
+  height: auto;       /* keep proportions */
+  display: block;
+  margin: 0 auto 10px auto; /* center and add spacing below */
+  border-radius: 5px; /* rounded corners */
+}
+
