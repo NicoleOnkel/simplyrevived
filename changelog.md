@@ -17,3 +17,5 @@
 -Stylesheet added
 -Index/home page updated
 -Books and collections update
+-Cafe and Menu Update
+-Events page Update
