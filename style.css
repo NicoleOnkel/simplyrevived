@@ -57,17 +57,21 @@ nav ul li a.active {
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.45); /* slightly darker overlay for better contrast */
+  background-color: rgba(0, 0, 0, 0.45); /* overlay for contrast */
   padding: 60px 20px;
   border-radius: 10px;
   display: inline-block;
+  max-width: 900px; /* constrain width on large screens */
+  width: 90%;       /* flexible for smaller screens */
+  margin: 0 auto;   /* center horizontally */
+  text-align: center; /* center text */
 }
 
 /* Hero Overlay Text */
 .hero-overlay h2 {
   font-size: 3rem; /* bigger heading */
   font-weight: bold;
-  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* dark shadow for strong contrast */
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* strong contrast */
   margin-bottom: 20px;
 }
 
@@ -107,7 +111,9 @@ nav ul li a.active {
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  justify-items: center;
+  justify-items: center; /* center items in columns */
+  max-width: 1200px; /* constrain width on desktop */
+  margin: 0 auto;     /* center grid horizontally */
   padding: 20px;
 }
 
@@ -149,6 +155,8 @@ form button {
 /* ===== Sections ===== */
 section {
   padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* center all content sections */
 }
 
 /* ===== Footer ===== */
