@@ -49,18 +49,38 @@ nav ul li a.active {
 
 /* ===== Hero Section ===== */
 .hero {
-  background: url("img/store.png") no-repeat center center/cover;
-  color: rgb(8, 8, 8);
+  background: url("images/banner.jpg") no-repeat center center/cover;
+  color: white;
   text-align: center;
   padding: 100px 20px;
   position: relative;
 }
 
 .hero-overlay {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.45); /* slightly darker overlay for better contrast */
   padding: 60px 20px;
   border-radius: 10px;
   display: inline-block;
+}
+
+/* Hero Overlay Text */
+.hero-overlay h2 {
+  font-size: 3rem; /* bigger heading */
+  font-weight: bold;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.8); /* dark shadow for strong contrast */
+  margin-bottom: 20px;
+}
+
+.hero-overlay p {
+  font-size: 1.5rem; /* bigger paragraph */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  margin-bottom: 30px;
+}
+
+/* Hero Buttons */
+.hero-overlay .btn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
 }
 
 /* ===== Buttons ===== */
@@ -164,6 +184,19 @@ footer {
   .event-grid {
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   }
+
+  .hero-overlay h2 {
+    font-size: 2.5rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1.2rem;
+  }
+
+  .hero-overlay .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -171,8 +204,16 @@ footer {
     padding: 40px 10px;
   }
 
-  .btn {
+  .hero-overlay h2 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .hero-overlay .btn {
     padding: 8px 16px;
-    font-size: 14px;
+    font-size: 0.9rem;
   }
 }
