@@ -57,7 +57,7 @@ nav a:hover {
 /* --- Hero Section --- */
 .hero {
   background: url('img/store.png') center/cover no-repeat;
-  color: white;
+  color: rgb(22, 22, 22);
   text-align: center;
   padding: 5rem 2rem;
 }
