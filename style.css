@@ -49,8 +49,8 @@ nav ul li a.active {
 
 /* ===== Hero Section ===== */
 .hero {
-  background: url("images/banner.jpg") no-repeat center center/cover;
-  color: white;
+  background: url("img/store.png") no-repeat center center/cover;
+  color: rgb(8, 8, 8);
   text-align: center;
   padding: 100px 20px;
   position: relative;
