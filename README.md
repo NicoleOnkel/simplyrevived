@@ -22,6 +22,18 @@ Change Log:
 
 
 Responsive Design 
+-Desktops
+c:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot 2025-09-27 205003.png
+C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot 2025-09-27 205119.png
+
+-Mobile Phones
+C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203900_com_android_chrome_ChromeTabbedActivity.jpg
+
+C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203910_com_android_chrome_ChromeTabbedActivity.jpg
+
+C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203932_com_android_chrome_ChromeTabbedActivity.jpg
+
+
 
 
 
