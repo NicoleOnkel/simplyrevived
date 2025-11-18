@@ -3,50 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simply Revived | Cafe & Bakery</title>
+  <title>Coffee & Bakery | Simply Revived</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
+<header>
     <h1>Simply Revived</h1>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="booksandcollections.html">Books</a></li>
-        <li><a href="cafeandmenu.html" class="active">Coffee & Bakery</a></li>
+        <li><a class="active" href="cafeandmenu.html">Coffee & Bakery</a></li>
         <li><a href="events.html">Events</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-  </header>
+</header>
 
-  <!-- Cafe Section -->
-  <section id="coffee">
-    <h2>Our Coffee & Bakery</h2>
-    <p>Relax in our cozy cafe with freshly brewed coffee and homemade bakery delights. Perfect for pairing with a good book.</p>
+<section class="cafe-page">
+  <h2>Our Coffee & Bakery Menu</h2>
+  <p>Relax with freshly brewed coffee, homemade pastries, and tasty treats while enjoying your favorite books.</p>
 
-    <div class="menu-grid">
+  <div class="menu-grid">
 
-      <!-- Coffee Menu -->
-      <div class="card">
-        <h3>Coffee</h3>
-        <ul>
-          <li>Espresso – <strong>R25</strong></li>
-          <li>Cappuccino – <strong>R35</strong></li>
-          <li>Latte – <strong>R38</strong></li>
-          <li>Americano – <strong>R30</strong></li>
-          <li>Mocha – <strong>R40</strong></li>
-        </ul>
-      </div>
+    <!-- Coffee Items -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93" alt="Cappuccino">
+      <h3>Cappuccino</h3>
+      <p>Rich espresso with steamed milk and frothy foam.</p>
+      <p class="price">R35</p>
+    </div>
 
-      <!-- Bakery Menu -->
-      <div class="card">
-        <h3>Bakery</h3>
-        <ul>
-          <li>Croissant – <strong>R28</strong></li>
-          <li>Muffin (Blueberry/Chocolate) – <strong>R32</strong></li>
-          <li>Slice of Cake – <strong>R45</strong></li>
-          <li>Brownie – <stro
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1522184216313-5f392bd7d541" alt="Latte">
+      <h3>Latte</h3>
+      <p>Smooth espresso with a creamy layer of milk foam.</p>
+      <p class="price">R32</p>
+    </div>
+
+    <!-- Bakery Items -->
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1601924582975-0545c1e75e86" alt="Croissant">
+      <h3>Butter Croissant</h3>
+      <p>Flaky, buttery pastry baked fresh daily.</p>
+      <p class="price">R25</p>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092" alt="Chocolate Muffin">
+      <h3>Chocolate Muffin</h3>
+      <p>Moist and chocolatey muffin perfect with coffee.</p>
+      <p class="price">R28</p>
+    </div>
+
+    <div class="menu-card">
+      <img src="https://images.unsplash.com/photo-1565958011702-44b2f28c641b" alt="Cheesecake">
+      <h3>Classic Cheesecake</h3>
+      <p>Creamy cheesecake topped with fresh berries.</p>
+      <p class="price">R45</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
+</footer>
+
+<script>
+  // Optional: simple hover effect using jQuery
+  $(".menu-card").hover(
+    function() { $(this).css("transform","scale(1.05)"); },
+    function() { $(this).css("transform","scale(1)"); }
+  );
+</script>
+
+</body>
+</html>
