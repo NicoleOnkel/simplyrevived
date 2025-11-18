@@ -63,6 +63,8 @@ C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203932_com
 -jquery added for tabs stylling
 -Google maps added in previous part
 -SEO
+-Sitemap file addedd
+-robots.txt added
 
 
 References:
