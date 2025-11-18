@@ -59,6 +59,10 @@ C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203932_com
 27.09.2025
 -Responsive Design images added
 
+18.11.2025
+-jquery added for tabs stylling
+-Google maps added in previous part
+
 
 
 

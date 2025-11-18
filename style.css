@@ -94,67 +94,82 @@ nav ul li a.active {
   background: #b89324;
 }
 
-/* -------------------- PAGE HEADER -------------------- */
-.page-header {
+/* -------------------- PAGE HEADINGS -------------------- */
+.page-header, .books-page h2, .cafe-page h2, .events-page h2 {
   text-align: center;
   margin-top: 130px;
   padding: 40px 20px;
-}
-
-.page-header h2 {
-  font-size: 38px;
   font-family: "Playfair Display", serif;
 }
 
-.page-header p {
+.page-header p, .books-page p, .cafe-page p, .events-page p {
   margin-top: 10px;
+  text-align: center;
 }
 
 /* -------------------- SEARCH BAR -------------------- */
-.search-container {
-  text-align: center;
-  margin: 25px 0;
-}
-
-#bookSearch {
+.search-input {
   width: 60%;
   padding: 12px 15px;
   border: 2px solid #d4af37;
   border-radius: 8px;
   font-size: 16px;
+  margin: 15px auto 40px auto;
+  display: block;
   background: #fff;
   outline: none;
   transition: 0.3s;
 }
 
-#bookSearch:focus {
+.search-input:focus {
   border-color: #b89324;
   box-shadow: 0px 0px 8px rgba(212, 175, 55, 0.5);
 }
 
-/* -------------------- BOOK GALLERY -------------------- */
-.book-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  padding: 40px 60px;
+/* -------------------- FILTER BUTTONS -------------------- */
+.filters {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.book-item {
+.filter-btn {
   background: #fff;
-  padding: 20px;
+  color: #3b2f2f;
+  border: 2px solid #d4af37;
+  padding: 8px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filter-btn:hover, .filter-btn.active-filter {
+  background: #d4af37;
+  color: #fff;
+}
+
+/* -------------------- BOOK GRID -------------------- */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  padding: 0 60px 60px 60px;
+}
+
+.book-card {
+  background: #fff;
+  padding: 15px;
   border-radius: 10px;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  cursor: pointer;
 }
 
-.book-item:hover {
+.book-card:hover {
   transform: translateY(-6px);
   box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
 }
 
-.book-item img {
+.book-card img {
   width: 160px;
   height: 230px;
   object-fit: cover;
@@ -162,19 +177,92 @@ nav ul li a.active {
   transition: transform 0.3s;
 }
 
-.book-item:hover img {
+.book-card:hover img {
   transform: scale(1.07);
 }
 
-.book-item h3 {
+.book-card h3 {
   margin-top: 12px;
   font-size: 20px;
-  font-family: "Playfair Display", serif;
 }
 
-.book-item p {
+.book-card p {
   color: #5c4f4f;
   margin-top: 5px;
+}
+
+/* -------------------- MENU GRID -------------------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 40px 60px;
+}
+
+.menu-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  padding-bottom: 15px;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #d4af37;
+}
+
+.menu-card h3 {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.menu-card p {
+  margin-top: 5px;
+}
+
+.menu-card .price {
+  font-weight: bold;
+  margin-top: 8px;
+  color: #b89324;
+}
+
+.menu-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+/* -------------------- LIGHTBOX -------------------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 6px;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
 }
 
 /* -------------------- FOOTER -------------------- */
@@ -187,32 +275,38 @@ footer {
 }
 
 /* -------------------- RESPONSIVE DESIGN -------------------- */
+@media (max-width: 1024px) {
+  .book-grid, .menu-grid {
+    padding: 0 40px 40px 40px;
+  }
+}
+
 @media (max-width: 768px) {
   header {
     flex-direction: column;
     text-align: center;
   }
-
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
   }
-
   .hero h2 {
     font-size: 40px;
   }
-
-  #bookSearch {
+  .search-input {
     width: 85%;
-  }
-
-  .book-gallery {
-    padding: 20px;
   }
 }
 
 @media (max-width: 480px) {
   .hero h2 {
     font-size: 32px;
+  }
+  .book-card img, .menu-card img {
+    width: 140px;
+    height: 200px;
+  }
+  .menu-card {
+    padding-bottom: 10px;
   }
 }
