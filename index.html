@@ -71,6 +71,38 @@
   <footer>
     <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
   </footer>
+  <!-- jQuery CDN -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function () {
+
+  // Hide all tab content except first
+  $(".tab-content").hide();
+  $(".tab-content:first").show();
+  $(".tab-link:first").addClass("active-tab");
+
+  // Tab click handler
+  $(".tab-link").click(function (e) {
+    e.preventDefault();
+
+    let tabID = $(this).attr("data-tab");
+
+    // Remove active state from all
+    $(".tab-link").removeClass("active-tab");
+
+    // Add active to clicked
+    $(this).addClass("active-tab");
+
+    // Hide all content with fade
+    $(".tab-content").hide();
+
+    // Show selected with smooth fade
+    $("#" + tabID).fadeIn(300);
+  });
+});
+</script>
+
 
 </body>
 </html>

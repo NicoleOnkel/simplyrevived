@@ -1,4 +1,5 @@
 # simplyrevived
+https://github.com/NicoleOnkel/simplyrevived
 
 Nicole Onkel
 ST10497522
@@ -54,6 +55,9 @@ C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203932_com
 -Contact page update
 -Images size update
 
+
+27.09.2025
+-Responsive Design images added
 
 
 
