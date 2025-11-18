@@ -7,79 +7,35 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
 
 <header>
-    <h1>Simply Revived</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="booksandcollections.html">Books</a></li>
-        <li><a class="active" href="cafeandmenu.html">Coffee & Bakery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <h1>Simply Revived</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booksandcollections.html">Books</a></li>
+      <li><a href="cafeandmenu.html" class="active">Coffee & Bakery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="cafe-page">
-  <h2>Our Coffee & Bakery Menu</h2>
-  <p>Relax with freshly brewed coffee, homemade pastries, and tasty treats while enjoying your favorite books.</p>
-
-  <div class="menu-grid">
-
-    <!-- Coffee Items -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&h=300&fit=crop" alt="Cappuccino">
-      <h3>Cappuccino</h3>
-      <p>Rich espresso with steamed milk and frothy foam.</p>
-      <p class="price">R35</p>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1522184216313-5f392bd7d541?w=400&h=300&fit=crop" alt="Latte">
-      <h3>Latte</h3>
-      <p>Smooth espresso with a creamy layer of milk foam.</p>
-      <p class="price">R32</p>
-    </div>
-
-    <!-- Bakery Items -->
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1601924582975-0545c1e75e86?w=400&h=300&fit=crop" alt="Croissant">
-      <h3>Butter Croissant</h3>
-      <p>Flaky, buttery pastry baked fresh daily.</p>
-      <p class="price">R25</p>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=400&h=300&fit=crop" alt="Chocolate Muffin">
-      <h3>Chocolate Muffin</h3>
-      <p>Moist and chocolatey muffin perfect with coffee.</p>
-      <p class="price">R28</p>
-    </div>
-
-    <div class="menu-card">
-      <img src="https://images.unsplash.com/photo-1565958011702-44b2f28c641b?w=400&h=300&fit=crop" alt="Cheesecake">
-      <h3>Classic Cheesecake</h3>
-      <p>Creamy cheesecake topped with fresh berries.</p>
-      <p class="price">R45</p>
-    </div>
-
+<section>
+  <h2>Coffee & Bakery Menu</h2>
+  <div class="books-grid">
+    <div class="card"><img src="images/coffee1.jpg" alt="Cappuccino"><p>Cappuccino</p></div>
+    <div class="card"><img src="images/coffee2.jpg" alt="Latte"><p>Latte</p></div>
+    <div class="card"><img src="images/bakery1.jpg" alt="Croissant"><p>Croissant</p></div>
+    <div class="card"><img src="images/bakery2.jpg" alt="Muffin"><p>Muffin</p></div>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
-
-<script>
-  $(".menu-card").hover(
-    function() { $(this).css("transform","scale(1.05)"); },
-    function() { $(this).css("transform","scale(1)"); }
-  );
-</script>
 
 </body>
 </html>
