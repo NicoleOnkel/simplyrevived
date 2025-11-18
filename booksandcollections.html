@@ -3,100 +3,126 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simply Revived | Books & Collections</title>
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <!-- Lightbox CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
-
-  <!-- Your main CSS -->
+  <title>Books & Collections | Simply Revived</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
 
 <header>
-  <h1>Simply Revived</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a class="active" href="booksandcollections.html">Books</a></li>
-      <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <h1>Simply Revived</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="booksandcollections.html">Books</a></li>
+        <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
 </header>
 
-<!-- Page Title -->
-<section class="page-header">
+<section class="books-page">
+
   <h2>Our Book Collection</h2>
-  <p>Browse new arrivals, classics, kids' books and more.</p>
+
+  <!-- SEARCH BAR -->
+  <input type="text" id="searchBar" placeholder="Search for a book title..." class="search-input">
+
+  <!-- FILTERS -->
+  <div class="filters">
+      <button class="filter-btn active-filter" data-genre="all">All</button>
+      <button class="filter-btn" data-genre="fiction">Fiction</button>
+      <button class="filter-btn" data-genre="nonfiction">Non-fiction</button>
+      <button class="filter-btn" data-genre="romance">Romance</button>
+      <button class="filter-btn" data-genre="mystery">Mystery / Thriller</button>
+      <button class="filter-btn" data-genre="scifi">Sci-Fi / Fantasy</button>
+      <button class="filter-btn" data-genre="selfhelp">Self-Help</button>
+      <button class="filter-btn" data-genre="biography">Biography</button>
+      <button class="filter-btn" data-genre="children">Children</button>
+  </div>
+
+  <!-- BOOK GRID -->
+  <div class="book-grid">
+
+    <!-- Example Book -->
+    <div class="book-card" data-genre="fiction">
+        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" class="book-img" alt="Book">
+        <h3>The Silent Pages</h3>
+        <p>Fiction</p>
+    </div>
+
+    <div class="book-card" data-genre="romance">
+        <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0" class="book-img" alt="Book">
+        <h3>Hearts in Bloom</h3>
+        <p>Romance</p>
+    </div>
+
+    <div class="book-card" data-genre="mystery">
+        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765" class="book-img" alt="Book">
+        <h3>Shadows of the Night</h3>
+        <p>Mystery</p>
+    </div>
+
+    <div class="book-card" data-genre="scifi">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="book-img" alt="Book">
+        <h3>Galactic Drift</h3>
+        <p>Sci-Fi</p>
+    </div>
+
+    <div class="book-card" data-genre="nonfiction">
+        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d" class="book-img" alt="Book">
+        <h3>The Real Story</h3>
+        <p>Non-fiction</p>
+    </div>
+
+  </div>
+
 </section>
 
-<!--  SEARCH BAR -->
-<div class="search-container">
-  <input type="text" id="bookSearch" placeholder="Search for a book or author...">
+<!-- LIGHTBOX -->
+<div id="lightbox" class="lightbox">
+    <span class="close-lightbox">&times;</span>
+    <img class="lightbox-img" src="">
 </div>
 
-<!-- Book Gallery -->
-<section class="book-gallery">
-
-  <div class="book-item" data-title="The Great Gatsby">
-    <a href="img/store.png" data-lightbox="books" data-title="The Great Gatsby">
-      <img src="img/store.png" alt="The Great Gatsby">
-    </a>
-    <h3>The Great Gatsby</h3>
-    <p>F. Scott Fitzgerald</p>
-  </div>
-
-  <div class="book-item" data-title="Becoming">
-    <a href="img/store.png" data-lightbox="books" data-title="Becoming">
-      <img src="img/store.png" alt="Becoming">
-    </a>
-    <h3>Becoming</h3>
-    <p>Michelle Obama</p>
-  </div>
-
-  <div class="book-item" data-title="Harry Potter">
-    <a href="img/store.png" data-lightbox="books" data-title="Harry Potter">
-      <img src="img/store.png" alt="Harry Potter">
-    </a>
-    <h3>Harry Potter</h3>
-    <p>J.K. Rowling</p>
-  </div>
-
-  <div class="book-item" data-title="Think Like a Monk">
-    <a href="img/store.png" data-lightbox="books" data-title="Think Like a Monk">
-      <img src="img/store.png" alt="Think Like a Monk">
-    </a>
-    <h3>Think Like a Monk</h3>
-    <p>Jay Shetty</p>
-  </div>
-
-</section>
-
-<footer>
-  <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
-</footer>
-
-<!-- Lightbox Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-
-<!-- Search & Animations -->
 <script>
 $(document).ready(function () {
 
-  // 🔍 Live Search Filter
-  $("#bookSearch").on("keyup", function () {
-    let value = $(this).val().toLowerCase();
+  /*  SEARCH */
+  $("#searchBar").on("keyup", function () {
+      let value = $(this).val().toLowerCase();
+      $(".book-card").filter(function () {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+  });
 
-    $(".book-item").filter(function () {
-      $(this).toggle($(this).attr("data-title").toLowerCase().indexOf(value) > -1);
-    });
+  /*  FILTER BUTTONS */
+  $(".filter-btn").click(function () {
+      $(".filter-btn").removeClass("active-filter");
+      $(this).addClass("active-filter");
+
+      let genre = $(this).attr("data-genre");
+
+      if (genre === "all") {
+          $(".book-card").fadeIn();
+      } else {
+          $(".book-card").hide();
+          $('.book-card[data-genre="' + genre + '"]').fadeIn();
+      }
+  });
+
+  /* LIGHTBOX */
+  $(".book-img").click(function () {
+      let imgSrc = $(this).attr("src");
+      $(".lightbox-img").attr("src", imgSrc);
+      $("#lightbox").fadeIn(300);
+  });
+
+  $(".close-lightbox").click(function () {
+      $("#lightbox").fadeOut(300);
   });
 
 });
