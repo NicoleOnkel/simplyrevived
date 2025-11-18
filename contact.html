@@ -3,11 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact Simply Revived | Bookstore & Café</title>
+  <title>Contact | Simply Revived</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
 
 <header>
@@ -19,16 +18,29 @@
       <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="about.html">About Us</a></li>
-      <li><a class="active" href="contact.html">Contact</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="contact-page">
+<section>
   <h2>Contact Us</h2>
   <p>Email: <a href="mailto:info@simplyrevived.co.za">info@simplyrevived.co.za</a></p>
   <p>Phone: +27 12 345 6789</p>
   <p>Address: 123 Book Street, Cape Town, South Africa</p>
+
+  <!-- Google Map -->
+  <div class="map-container" style="margin:20px 0;">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.123456789012!2d18.4241!3d-33.9249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1!2sSimply%20Revived!5e0!3m2!1sen!2sza!4v1699999999999"
+      width="100%"
+      height="400"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
 
   <h3>Send Us a Message / Enquiry</h3>
   <form id="contactForm">
@@ -37,7 +49,7 @@
     <input type="text" name="subject" id="subject" placeholder="Subject" required>
     <textarea name="message" id="message" placeholder="Your Message" required></textarea>
     <button type="submit" class="btn">Send Message</button>
-    <!-- Honeypot field to prevent bots -->
+    <!-- Honeypot for spam -->
     <input type="text" name="website" style="display:none;">
   </form>
   <div id="formMessage" style="margin-top:10px;"></div>
@@ -52,18 +64,17 @@ $(document).ready(function() {
 
   $('#contactForm').submit(function(e) {
     e.preventDefault();
-
     $('#formMessage').html('');
 
     let name = $('#name').val().trim();
     let email = $('#email').val().trim();
     let subject = $('#subject').val().trim();
     let message = $('#message').val().trim();
-    let honeypot = $('[name="website"]').val(); // check honeypot
+    let honeypot = $('[name="website"]').val();
+
     let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if(honeypot !== "") {
-      // Bot detected
       $('#formMessage').html('<span style="color:red;">Spam detected.</span>');
       return;
     }
