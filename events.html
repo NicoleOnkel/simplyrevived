@@ -7,66 +7,33 @@
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
 
 <header>
-    <h1>Simply Revived</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="booksandcollections.html">Books</a></li>
-        <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
-        <li><a class="active" href="events.html">Events</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <h1>Simply Revived</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booksandcollections.html">Books</a></li>
+      <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
+      <li><a href="events.html" class="active">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="events-page">
+<section>
   <h2>Upcoming Events</h2>
-  <p>Join us for author signings, reading circles, and community gatherings at Simply Revived.</p>
-
-  <div class="events-grid">
-
-    <!-- Event 1 -->
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1504198453319-5ce911bafcde?w=400&h=300&fit=crop" alt="Author Signing">
-      <h3>Author Signing: Jane Doe</h3>
-      <p>Date: 5 December 2025</p>
-      <p>Meet local author Jane Doe and get your favorite books signed.</p>
-    </div>
-
-    <!-- Event 2 -->
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1554774853-d10d3d28e1a0?w=400&h=300&fit=crop" alt="Reading Circle">
-      <h3>Monthly Reading Circle</h3>
-      <p>Date: 12 December 2025</p>
-      <p>Join fellow book lovers for discussions on our book of the month.</p>
-    </div>
-
-    <!-- Event 3 -->
-    <div class="event-card">
-      <img src="https://images.unsplash.com/photo-1515169067860-53858c5a7b48?w=400&h=300&fit=crop" alt="Children Storytime">
-      <h3>Children's Storytime</h3>
-      <p>Date: 19 December 2025</p>
-      <p>A fun reading session for kids with interactive storytelling and activities.</p>
-    </div>
-
+  <div class="books-grid">
+    <div class="card"><img src="images/event1.jpg" alt="Book Signing"><p>Author Book Signing - 25 Nov 2025</p></div>
+    <div class="card"><img src="images/event2.jpg" alt="Reading Circle"><p>Children's Reading Circle - 28 Nov 2025</p></div>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
-
-<script>
-  $(".event-card").hover(
-    function() { $(this).css("transform","scale(1.03)").css("box-shadow","0px 6px 14px rgba(0,0,0,0.2)"); },
-    function() { $(this).css("transform","scale(1)").css("box-shadow","none"); }
-  );
-</script>
 
 </body>
 </html>
