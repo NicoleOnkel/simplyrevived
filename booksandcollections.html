@@ -3,73 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Simply Revived | Books</title>
+  <title>Simply Revived | Books & Collections</title>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
+  <!-- Your main CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Simply Revived</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="booksandcollections.html" class="active">Books</a></li>
-        <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <h1>Simply Revived</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="booksandcollections.html">Books</a></li>
+      <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Books Section -->
-  <section id="books">
-    <h2>Browse Our Collection</h2>
-    <p>Discover your next favorite read – from timeless classics to new bestsellers.</p>
+<!-- Page Title -->
+<section class="page-header">
+  <h2>Our Book Collection</h2>
+  <p>Browse new arrivals, classics, kids' books and more.</p>
+</section>
 
-    <div class="book-grid">
+<!-- 🔍 SEARCH BAR -->
+<div class="search-container">
+  <input type="text" id="bookSearch" placeholder="Search for a book or author...">
+</div>
 
-      <!-- Book Card -->
-      <div class="card">
-        <img src="img/store.png" alt="Book Title 1" class="book-img">
-        <h3>The Timeless Journey</h3>
-        <p>By Jane Smith</p>
-        <p><strong>R220</strong></p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
+<!-- Book Gallery -->
+<section class="book-gallery">
 
-      <div class="card">
-        <img src="img/store.png" alt="Book Title 2" class="book-img">
-        <h3>Shadows & Light</h3>
-        <p>By Michael Johnson</p>
-        <p><strong>R180</strong></p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
+  <div class="book-item" data-title="The Great Gatsby">
+    <a href="img/store.png" data-lightbox="books" data-title="The Great Gatsby">
+      <img src="img/store.png" alt="The Great Gatsby">
+    </a>
+    <h3>The Great Gatsby</h3>
+    <p>F. Scott Fitzgerald</p>
+  </div>
 
-      <div class="card">
-        <img src="img/store.png" alt="Book Title 3" class="book-img">
-        <h3>Children of the Stars</h3>
-        <p>By Aisha Patel</p>
-        <p><strong>R250</strong></p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
+  <div class="book-item" data-title="Becoming">
+    <a href="img/store.png" data-lightbox="books" data-title="Becoming">
+      <img src="img/store.png" alt="Becoming">
+    </a>
+    <h3>Becoming</h3>
+    <p>Michelle Obama</p>
+  </div>
 
-      <div class="card">
-        <img src="img/store.png" alt="Book Title 4" class="book-img">
-        <h3>Whispers in the Wind</h3>
-        <p>By David Brown</p>
-        <p><strong>R200</strong></p>
-        <a href="#" class="btn">Buy Now</a>
-      </div>
+  <div class="book-item" data-title="Harry Potter">
+    <a href="img/store.png" data-lightbox="books" data-title="Harry Potter">
+      <img src="img/store.png" alt="Harry Potter">
+    </a>
+    <h3>Harry Potter</h3>
+    <p>J.K. Rowling</p>
+  </div>
 
-    </div>
-  </section>
+  <div class="book-item" data-title="Think Like a Monk">
+    <a href="img/store.png" data-lightbox="books" data-title="Think Like a Monk">
+      <img src="img/store.png" alt="Think Like a Monk">
+    </a>
+    <h3>Think Like a Monk</h3>
+    <p>Jay Shetty</p>
+  </div>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
-  </footer>
+</section>
+
+<footer>
+  <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
+</footer>
+
+<!-- Lightbox Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+
+<!-- Search & Animations -->
+<script>
+$(document).ready(function () {
+
+  // 🔍 Live Search Filter
+  $("#bookSearch").on("keyup", function () {
+    let value = $(this).val().toLowerCase();
+
+    $(".book-item").filter(function () {
+      $(this).toggle($(this).attr("data-title").toLowerCase().indexOf(value) > -1);
+    });
+  });
+
+});
+</script>
 
 </body>
 </html>
