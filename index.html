@@ -3,60 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <title>Simply Revived | Bookstore & Coffee</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
   <!-- SEO Meta Tags -->
   <title>Simply Revived | Bookstore & Coffee in Cape Town</title>
   <meta name="description" content="Simply Revived: A cozy bookstore and café in Cape Town offering curated books, coffee, bakery treats, and community events.">
   <meta name="keywords" content="Bookstore, Café, Books, Coffee, Bakery, Events, Cape Town, Reading, Community">
   <meta name="author" content="Simply Revived">
   <meta name="robots" content="index, follow">
-
-  <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-  <!-- Open Graph for Social Media -->
-  <meta property="og:title" content="Simply Revived | Bookstore & Coffee in Cape Town">
-  <meta property="og:description" content="A cozy bookstore and café where books, coffee, and community meet in Cape Town.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.simplyrevived.co.za/">
-  <meta property="og:image" content="images/banner.jpg">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Simply Revived | Bookstore & Coffee">
-  <meta name="twitter:description" content="A cozy bookstore and café where books, coffee, and community meet in Cape Town.">
-  <meta name="twitter:image" content="images/banner.jpg">
-
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BookStore",
-    "name": "Simply Revived",
-    "image": "https://www.simplyrevived.co.za/images/banner.jpg",
-    "url": "https://www.simplyrevived.co.za/",
-    "telephone": "+27 12 345 6789",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Book Street",
-      "addressLocality": "Cape Town",
-      "postalCode": "8000",
-      "addressCountry": "ZA"
-    },
-    "sameAs": [
-      "https://www.facebook.com/SimplyRevived",
-      "https://www.instagram.com/SimplyRevived"
-    ]
-  }
-  </script>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- jQuery -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
+
 <body>
-  <!-- page content -->
+
+<header>
+  <h1>Simply Revived</h1>
+  <nav>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="booksandcollections.html">Books</a></li>
+      <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+  <h2>Welcome to Simply Revived</h2>
+  <p>Your neighborhood bookstore with a cozy coffee corner.</p>
+  <a href="booksandcollections.html" class="btn">Shop Books</a>
+</section>
+
+<section class="featured-books">
+  <h2>Featured Books</h2>
+  <div class="book-grid">
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=160&h=230&fit=crop" alt="Book 1">
+      <h3>Book Title 1</h3>
+    </div>
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?w=160&h=230&fit=crop" alt="Book 2">
+      <h3>Book Title 2</h3>
+    </div>
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=160&h=230&fit=crop" alt="Book 3">
+      <h3>Book Title 3</h3>
+    </div>
+  </div>
+</section>
+
+<section class="home-intro">
+  <h2>About Simply Revived</h2>
+  <p>Simply Revived is a cozy bookstore and café where books, coffee, and community meet. Browse our carefully curated collections, enjoy a cappuccino, and join local events.</p>
+  <a href="about.html" class="btn">Learn More</a>
+</section>
+
+<section class="home-cafe">
+  <h2>Relax at Our Café</h2>
+  <p>Enjoy freshly brewed coffee, bakery treats, and a welcoming atmosphere while reading your favorite books.</p>
+  <a href="cafeandmenu.html" class="btn">View Menu</a>
+</section>
+
+<footer>
+  <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
