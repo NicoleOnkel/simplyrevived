@@ -266,3 +266,41 @@ p {
     font-size: 14px;
   }
 }
+
+/* TAB BUTTONS */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    background: #d4c4a8;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease;
+    border-radius: 25px;
+}
+
+.tab-link.active,
+.tab-link:hover {
+    background: #b89c72;
+    color: white;
+}
+
+/* TAB CONTENT */
+.tab-content {
+    display: none;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.tab-content.active {
+    display: block;
+}
+
