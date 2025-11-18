@@ -4,125 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simply Revived | Bookstore & Coffee</title>
-
-  <!-- jQuery CDN -->
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
-  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
 
-  <!-- Header -->
-  <header>
-    <h1>Simply Revived</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="booksandcollections.html">Books</a></li>
-        <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <h1>Simply Revived</h1>
+  <nav>
+    <ul>
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="booksandcollections.html">Books</a></li>
+      <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="home">
-    <h2>Welcome to Simply Revived</h2>
-    <p>Your neighborhood bookstore with a cozy coffee corner.</p>
-    <a href="booksandcollections.html" class="btn">Shop Books</a>
-  </section>
+<section class="hero" id="home">
+  <h2>Welcome to Simply Revived</h2>
+  <p>Your neighborhood bookstore with a cozy coffee corner.</p>
+  <a href="booksandcollections.html" class="btn">Shop Books</a>
+</section>
 
-  <!-- Tabs Example (Required for jQuery Script) -->
-  <section class="tabs">
-    <div class="tab-links">
-      <a class="tab-link active-tab" data-tab="tab1">Overview</a>
-      <a class="tab-link" data-tab="tab2">Books</a>
-      <a class="tab-link" data-tab="tab3">Coffee Shop</a>
+<section class="featured-books">
+  <h2>Featured Books</h2>
+  <div class="book-grid">
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=160&h=230&fit=crop" alt="Book 1">
+      <h3>Book Title 1</h3>
     </div>
-
-    <div id="tab1" class="tab-content">
-      <p>Welcome to Simply Revived — your cozy local bookstore and coffee spot.</p>
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?w=160&h=230&fit=crop" alt="Book 2">
+      <h3>Book Title 2</h3>
     </div>
-
-    <div id="tab2" class="tab-content">
-      <p>Explore our collections of fiction, non-fiction, classics, and more.</p>
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=160&h=230&fit=crop" alt="Book 3">
+      <h3>Book Title 3</h3>
     </div>
+  </div>
+</section>
 
-    <div id="tab3" class="tab-content">
-      <p>Relax with freshly brewed coffee and delicious bakery treats.</p>
-    </div>
-  </section>
+<section class="home-intro">
+  <h2>About Simply Revived</h2>
+  <p>Simply Revived is a cozy bookstore and café where books, coffee, and community meet. Browse our carefully curated collections, enjoy a cappuccino, and join local events.</p>
+  <a href="about.html" class="btn">Learn More</a>
+</section>
 
-  <!-- Books Section -->
-  <section id="books">
-    <h2>Our Books</h2>
-    <p>Browse our carefully curated collection of novels, non-fiction, and children’s books. Available in-store and online.</p>
+<section class="home-cafe">
+  <h2>Relax at Our Café</h2>
+  <p>Enjoy freshly brewed coffee, bakery treats, and a welcoming atmosphere while reading your favorite books.</p>
+  <a href="cafeandmenu.html" class="btn">View Menu</a>
+</section>
 
-    <div class="card">
-      <h3>Bestsellers</h3>
-      <p>Discover today’s most popular reads.</p>
-      <a href="booksandcollections.html" class="btn">View More</a>
-    </div>
-  </section>
-
-  <!-- Coffee & Bakery Section -->
-  <section id="coffee">
-    <h2>Coffee & Bakery</h2>
-    <p>Relax with freshly brewed coffee and homemade bakery treats while you read.</p>
-
-    <div class="card">
-      <h3>Our Menu</h3>
-      <p>From cappuccinos to croissants, we’ve got the perfect pairing for your book.</p>
-      <a href="cafeandmenu.html" class="btn">View Menu</a>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Simply Revived</h2>
-    <p>Simply Revived began as a small second-hand bookstore and has grown into a vibrant community hub.</p>
-    <p>Our mission is to revive the love of reading while creating a warm space for connection.</p>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: info@simplyrevived.co.za</p>
-    <p>Phone: +27 12 345 6789</p>
-    <p>Visit us at 123 Book Street, Cape Town</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
-  </footer>
-
-<script>
-$(document).ready(function () {
-
-  // Hide all tab content except first
-  $(".tab-content").hide();
-  $(".tab-content:first").show();
-  $(".tab-link:first").addClass("active-tab");
-
-  // Tab click handler
-  $(".tab-link").click(function (e) {
-    e.preventDefault();
-
-    let tabID = $(this).attr("data-tab");
-
-    $(".tab-link").removeClass("active-tab");
-    $(this).addClass("active-tab");
-
-    $(".tab-content").hide();
-    $("#" + tabID).fadeIn(300);
-  });
-});
-</script>
+<footer>
+  <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
