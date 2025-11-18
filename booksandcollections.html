@@ -3,128 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books & Collections | Simply Revived</title>
+  <title>Books | Simply Revived</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
-
 <body>
 
 <header>
-    <h1>Simply Revived</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="booksandcollections.html">Books</a></li>
-        <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <h1>Simply Revived</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="booksandcollections.html" class="active">Books</a></li>
+      <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 </header>
 
-<section class="books-page">
-
-  <h2>Our Book Collection</h2>
-
-  <!-- SEARCH BAR -->
-  <input type="text" id="searchBar" placeholder="Search for a book title..." class="search-input">
-
-  <!-- FILTERS -->
-  <div class="filters">
-      <button class="filter-btn active-filter" data-genre="all">All</button>
-      <button class="filter-btn" data-genre="fiction">Fiction</button>
-      <button class="filter-btn" data-genre="nonfiction">Non-fiction</button>
-      <button class="filter-btn" data-genre="romance">Romance</button>
-      <button class="filter-btn" data-genre="mystery">Mystery / Thriller</button>
-      <button class="filter-btn" data-genre="scifi">Sci-Fi / Fantasy</button>
-      <button class="filter-btn" data-genre="selfhelp">Self-Help</button>
-      <button class="filter-btn" data-genre="biography">Biography</button>
-      <button class="filter-btn" data-genre="children">Children</button>
+<section>
+  <h2>Browse Our Books</h2>
+  <input type="text" id="bookSearch" placeholder="Search books...">
+  <div class="books-grid" id="bookGrid">
+    <div class="card" data-genre="fiction"><img src="images/book1.jpg" alt="Book 1"><p>Book 1 Description</p></div>
+    <div class="card" data-genre="non-fiction"><img src="images/book2.jpg" alt="Book 2"><p>Book 2 Description</p></div>
+    <div class="card" data-genre="children"><img src="images/book3.jpg" alt="Book 3"><p>Book 3 Description</p></div>
+    <div class="card" data-genre="fiction"><img src="images/book4.jpg" alt="Book 4"><p>Book 4 Description</p></div>
   </div>
 
-  <!-- BOOK GRID -->
-  <div class="book-grid">
-
-    <!-- Example Book -->
-    <div class="book-card" data-genre="fiction">
-        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" class="book-img" alt="Book">
-        <h3>The Silent Pages</h3>
-        <p>Fiction</p>
-    </div>
-
-    <div class="book-card" data-genre="romance">
-        <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0" class="book-img" alt="Book">
-        <h3>Hearts in Bloom</h3>
-        <p>Romance</p>
-    </div>
-
-    <div class="book-card" data-genre="mystery">
-        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765" class="book-img" alt="Book">
-        <h3>Shadows of the Night</h3>
-        <p>Mystery</p>
-    </div>
-
-    <div class="book-card" data-genre="scifi">
-        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" class="book-img" alt="Book">
-        <h3>Galactic Drift</h3>
-        <p>Sci-Fi</p>
-    </div>
-
-    <div class="book-card" data-genre="nonfiction">
-        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d" class="book-img" alt="Book">
-        <h3>The Real Story</h3>
-        <p>Non-fiction</p>
-    </div>
-
-  </div>
-
+  <h3>Filter by Genre</h3>
+  <button class="filter-btn" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="fiction">Fiction</button>
+  <button class="filter-btn" data-filter="non-fiction">Non-Fiction</button>
+  <button class="filter-btn" data-filter="children">Children</button>
 </section>
 
-<!-- LIGHTBOX -->
-<div id="lightbox" class="lightbox">
-    <span class="close-lightbox">&times;</span>
-    <img class="lightbox-img" src="">
-</div>
+<footer>
+  <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
+</footer>
 
 <script>
-$(document).ready(function () {
-
-  /*  SEARCH */
-  $("#searchBar").on("keyup", function () {
-      let value = $(this).val().toLowerCase();
-      $(".book-card").filter(function () {
-          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
-      });
+$(document).ready(function(){
+  // Book Search
+  $("#bookSearch").on("keyup", function() {
+    let value = $(this).val().toLowerCase();
+    $("#bookGrid .card").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
   });
 
-  /*  FILTER BUTTONS */
-  $(".filter-btn").click(function () {
-      $(".filter-btn").removeClass("active-filter");
-      $(this).addClass("active-filter");
-
-      let genre = $(this).attr("data-genre");
-
-      if (genre === "all") {
-          $(".book-card").fadeIn();
-      } else {
-          $(".book-card").hide();
-          $('.book-card[data-genre="' + genre + '"]').fadeIn();
-      }
+  // Genre Filter
+  $(".filter-btn").click(function() {
+    let filter = $(this).data("filter");
+    if(filter === "all") {
+      $("#bookGrid .card").show();
+    } else {
+      $("#bookGrid .card").hide();
+      $("#bookGrid .card[data-genre='" + filter + "']").show();
+    }
   });
-
-  /* LIGHTBOX */
-  $(".book-img").click(function () {
-      let imgSrc = $(this).attr("src");
-      $(".lightbox-img").attr("src", imgSrc);
-      $("#lightbox").fadeIn(300);
-  });
-
-  $(".close-lightbox").click(function () {
-      $("#lightbox").fadeOut(300);
-  });
-
 });
 </script>
 
