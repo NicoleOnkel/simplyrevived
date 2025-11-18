@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | Simply Revived</title>
+  <title>Contact Simply Revived | Bookstore & Café</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
@@ -18,22 +18,86 @@
       <li><a href="booksandcollections.html">Books</a></li>
       <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
       <li><a href="events.html">Events</a></li>
-      <li><a class="active" href="about.html">About Us</a></li>
-      <li><a href="contact.html">Contact</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a class="active" href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-<section class="about-page">
-  <h2>About Simply Revived</h2>
-  <p>Simply Revived started as a small neighborhood bookstore aiming to rekindle the love of reading. Over time, it has grown into a welcoming space offering a curated selection of books for all ages.</p>
-  <p>We also have a cozy café corner serving freshly brewed coffee and bakery items, making it a place where customers can relax, read, and connect.</p>
-  <p>Our mission is to inspire a love for reading and community. Our vision is to be the go-to bookstore and café where people of all ages discover new ideas, enjoy meaningful conversations, and revive the simple joy of books and togetherness.</p>
+<section class="contact-page">
+  <h2>Contact Us</h2>
+  <p>Email: <a href="mailto:info@simplyrevived.co.za">info@simplyrevived.co.za</a></p>
+  <p>Phone: +27 12 345 6789</p>
+  <p>Address: 123 Book Street, Cape Town, South Africa</p>
+
+  <h3>Send Us a Message / Enquiry</h3>
+  <form id="contactForm">
+    <input type="text" name="name" id="name" placeholder="Your Name" required>
+    <input type="email" name="email" id="email" placeholder="Your Email" required>
+    <input type="text" name="subject" id="subject" placeholder="Subject" required>
+    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+    <button type="submit" class="btn">Send Message</button>
+    <!-- Honeypot field to prevent bots -->
+    <input type="text" name="website" style="display:none;">
+  </form>
+  <div id="formMessage" style="margin-top:10px;"></div>
 </section>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
+
+<script>
+$(document).ready(function() {
+
+  $('#contactForm').submit(function(e) {
+    e.preventDefault();
+
+    $('#formMessage').html('');
+
+    let name = $('#name').val().trim();
+    let email = $('#email').val().trim();
+    let subject = $('#subject').val().trim();
+    let message = $('#message').val().trim();
+    let honeypot = $('[name="website"]').val(); // check honeypot
+    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if(honeypot !== "") {
+      // Bot detected
+      $('#formMessage').html('<span style="color:red;">Spam detected.</span>');
+      return;
+    }
+
+    if(name === '' || email === '' || subject === '' || message === '') {
+      $('#formMessage').html('<span style="color:red;">All fields are required.</span>');
+      return;
+    }
+
+    if(!emailRegex.test(email)) {
+      $('#formMessage').html('<span style="color:red;">Please enter a valid email address.</span>');
+      return;
+    }
+
+    $.ajax({
+      url: 'contact-process.php',
+      type: 'POST',
+      data: { name, email, subject, message },
+      beforeSend: function() {
+        $('#formMessage').html('<span style="color:blue;">Sending message...</span>');
+      },
+      success: function(response) {
+        $('#formMessage').html('<span style="color:green;">'+response+'</span>');
+        $('#contactForm')[0].reset();
+      },
+      error: function() {
+        $('#formMessage').html('<span style="color:red;">There was an error sending your message. Please try again later.</span>');
+      }
+    });
+
+  });
+
+});
+</script>
 
 </body>
 </html>

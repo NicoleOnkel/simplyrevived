@@ -62,9 +62,12 @@ C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203932_com
 18.11.2025
 -jquery added for tabs stylling
 -Google maps added in previous part
+
+19.11.2025
 -SEO
 -Sitemap file addedd
 -robots.txt added
+-Contact page updated with Enquire and contact Form and is made secure
 
 
 References:
