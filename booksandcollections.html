@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Books & Collections | Simply Revived</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 
   <!-- jQuery -->
@@ -31,9 +33,8 @@
   <p>Search and filter through our curated collection of books.</p>
 </section>
 
-<!-- 🔍 Search + Filters -->
+<!-- Search + Filter -->
 <section class="filters">
-
   <input type="text" id="searchInput" placeholder="Search books, authors, keywords…">
 
   <select id="genreFilter">
@@ -45,55 +46,62 @@
     <option value="history">History</option>
     <option value="local">Local Authors</option>
   </select>
-
 </section>
 
+<!-- BOOK GRID -->
 <section class="book-grid">
 
-  <!-- Each card now contains data-genre attributes -->
   <div class="book-card" data-genre="mystery fiction">
-    <img src="images/book1.jpg" alt="Book cover">
+    <img src="images/book1.jpg" class="lightbox-img" alt="Book cover">
     <h3>The Lost Pages</h3>
     <p class="author">Sarah Thompson</p>
-    <p class="description">A gripping mystery exploring forgotten worlds and hidden histories.</p>
+    <p class="description">A gripping mystery exploring forgotten worlds.</p>
   </div>
 
   <div class="book-card" data-genre="philosophy">
-    <img src="images/book2.jpg" alt="Book cover">
+    <img src="images/book2.jpg" class="lightbox-img" alt="Book cover">
     <h3>Journeys of the Mind</h3>
     <p class="author">Daniel Mokoena</p>
-    <p class="description">A philosophical dive into the human experience and creativity.</p>
+    <p class="description">A philosophical dive into creativity and consciousness.</p>
   </div>
 
   <div class="book-card" data-genre="romance fiction local">
-    <img src="images/book3.jpg" alt="Book cover">
+    <img src="images/book3.jpg" class="lightbox-img" alt="Book cover">
     <h3>The Café on the Corner</h3>
     <p class="author">L. Jacobs</p>
-    <p class="description">A warm, heartfelt story set around a small-town café.</p>
+    <p class="description">A heartwarming small-town romance.</p>
   </div>
 
   <div class="book-card" data-genre="history fiction">
-    <img src="images/book4.jpg" alt="Book cover">
+    <img src="images/book4.jpg" class="lightbox-img" alt="Book cover">
     <h3>Echoes of Time</h3>
     <p class="author">Helena Vos</p>
-    <p class="description">A historical novel weaving past and present together.</p>
+    <p class="description">A historical novel weaving past and present.</p>
   </div>
 
 </section>
+
+<!-- LIGHTBOX OVERLAY -->
+<div id="lightboxOverlay">
+  <span id="closeLightbox">&times;</span>
+  <img id="lightboxImage" src="">
+  <div id="lightboxPrev" class="lightbox-nav">&#10094;</div>
+  <div id="lightboxNext" class="lightbox-nav">&#10095;</div>
+</div>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
 
-<!-- 🔎 Filter & Search Script -->
+<!-- FILTER + SEARCH SCRIPT -->
 <script>
-$(document).ready(function() {
+$(document).ready(function () {
 
   function filterBooks() {
     let search = $("#searchInput").val().toLowerCase();
     let genre = $("#genreFilter").val();
 
-    $(".book-card").each(function() {
+    $(".book-card").each(function () {
       let title = $(this).find("h3").text().toLowerCase();
       let author = $(this).find(".author").text().toLowerCase();
       let description = $(this).find(".description").text().toLowerCase();
@@ -117,6 +125,46 @@ $(document).ready(function() {
 
   $("#searchInput").on("keyup", filterBooks);
   $("#genreFilter").on("change", filterBooks);
+
+});
+</script>
+
+<!-- LIGHTBOX SCRIPT -->
+<script>
+$(document).ready(function () {
+  let images = $(".lightbox-img");
+  let currentIndex = 0;
+
+  images.click(function () {
+    currentIndex = images.index(this);
+    showImage();
+  });
+
+  function showImage() {
+    $("#lightboxImage").attr("src", images.eq(currentIndex).attr("src"));
+    $("#lightboxOverlay").fadeIn(300);
+  }
+
+  $("#closeLightbox").click(function () {
+    $("#lightboxOverlay").fadeOut(300);
+  });
+
+  $("#lightboxNext").click(function () {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  });
+
+  $("#lightboxPrev").click(function () {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  });
+
+  // Close on ESC key
+  $(document).keydown(function (e) {
+    if (e.key === "Escape") $("#lightboxOverlay").fadeOut(300);
+    if (e.key === "ArrowRight") $("#lightboxNext").click();
+    if (e.key === "ArrowLeft") $("#lightboxPrev").click();
+  });
 });
 </script>
 
