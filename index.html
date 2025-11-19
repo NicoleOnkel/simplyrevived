@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books | Simply Revived</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simply Revived | Bookstore & Coffee</title>
+  <meta name="description" content="Simply Revived — a cosy bookstore & café in Cape Town offering curated books, coffee, bakery treats and community events.">
+  <meta name="author" content="Simply Revived">
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Lightbox CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -15,8 +15,8 @@
   <h1>Simply Revived</h1>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="booksandcollections.html" class="active">Books</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="booksandcollections.html">Books</a></li>
       <li><a href="cafeandmenu.html">Coffee & Bakery</a></li>
       <li><a href="events.html">Events</a></li>
       <li><a href="about.html">About Us</a></li>
@@ -25,102 +25,60 @@
   </nav>
 </header>
 
-<section class="page-intro">
-  <h2>Our Books</h2>
-  <p>Browse our carefully curated collection of novels, non-fiction, romance, mystery, sci-fi and children's books. Available in-store and online.</p>
+<!-- HERO -->
+<section class="page-intro" style="padding-top:30px;">
+  <h2>Welcome to Simply Revived</h2>
+  <p>Your neighbourhood bookstore where stories, coffee and community meet.</p>
+  <a class="btn" href="booksandcollections.html">Browse Books</a>
 </section>
 
-<section class="book-search">
-  <input type="text" id="searchInput" placeholder="Search books by title or author...">
-  <select id="genreFilter">
-    <option value="all">All Genres</option>
-    <option value="fiction">Fiction</option>
-    <option value="non-fiction">Non-Fiction</option>
-    <option value="romance">Romance</option>
-    <option value="mystery">Mystery</option>
-    <option value="sci-fi">Sci-Fi</option>
-    <option value="children">Children</option>
-  </select>
+<!-- FEATURED -->
+<section>
+  <h2 style="text-align:center; margin-top:10px;">Featured This Month</h2>
+  <div class="book-grid" style="max-width:1000px; margin:auto;">
+    <article class="book-card">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=900&q=80&auto=format&fit=crop" alt="Featured book 1">
+      <h3>The Silent Pages</h3>
+      <p class="author">Sarah Thompson</p>
+    </article>
+
+    <article class="book-card">
+      <img src="img/Romance.jpg" alt="Featured book 2">
+      <h3>Hearts in Bloom</h3>
+      <p class="author">L. Rivers</p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=900&q=80&auto=format&fit=crop" alt="Featured book 3">
+      <h3>Shadows of the Night</h3>
+      <p class="author">M. Khumalo</p>
+    </article>
+  </div>
 </section>
 
-<section class="book-grid">
-  <div class="book-card" data-genre="fiction">
-    <a href="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Fiction Book">
-      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" alt="Fiction book">
-    </a>
-    <h3>Fiction</h3>
-    <p>Explore imaginative stories from contemporary authors.</p>
+<!-- CAFE PREVIEW -->
+<section>
+  <h2 style="text-align:center;">Café & Bakery</h2>
+  <div class="book-grid" style="max-width:900px; margin:auto;">
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=80&auto=format&fit=crop" alt="Cappuccino">
+      <h3>Cappuccino</h3>
+      <p class="author">Freshly brewed, single origin espresso</p>
+    </div>
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1601924582975-0545c1e75e86?w=900&q=80&auto=format&fit=crop" alt="Croissant">
+      <h3>Butter Croissant</h3>
+      <p class="author">Baked fresh each morning</p>
+    </div>
   </div>
-
-  <div class="book-card" data-genre="romance">
-    <a href="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Romance Book">
-      <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?auto=format&fit=crop&w=400&q=80" alt="Romance book">
-    </a>
-    <h3>Romance</h3>
-    <p>A collection of love stories to warm your heart.</p>
-  </div>
-
-  <div class="book-card" data-genre="mystery">
-    <a href="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Mystery Book">
-      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=400&q=80" alt="Mystery book">
-    </a>
-    <h3>Mystery</h3>
-    <p>Twists and turns that will keep you guessing until the last page.</p>
-  </div>
-
-  <div class="book-card" data-genre="sci-fi">
-    <a href="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Sci-Fi Book">
-      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="Sci-Fi book">
-    </a>
-    <h3>Sci-Fi</h3>
-    <p>Futuristic adventures and imaginative worlds to explore.</p>
-  </div>
-
-  <div class="book-card" data-genre="non-fiction">
-    <a href="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Non-Fiction Book">
-      <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80" alt="Non-fiction book">
-    </a>
-    <h3>Non-Fiction</h3>
-    <p>Informative and educational reads for curious minds.</p>
-  </div>
-
-  <div class="book-card" data-genre="children">
-    <a href="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Children's Book">
-      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="Children's book">
-    </a>
-    <h3>Children</h3>
-    <p>Fun and educational stories for young readers.</p>
+  <div style="text-align:center; margin-top:14px;">
+    <a class="btn" href="cafeandmenu.html">View Menu</a>
   </div>
 </section>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
-
-<!-- Lightbox JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
-<script>
-// Search and Filter Functionality
-$(document).ready(function(){
-  $('#searchInput, #genreFilter').on('input change', function(){
-    var searchText = $('#searchInput').val().toLowerCase();
-    var genre = $('#genreFilter').val();
-
-    $('.book-card').each(function(){
-      var title = $(this).find('h3').text().toLowerCase();
-      var cardGenre = $(this).data('genre');
-
-      if((title.includes(searchText) || searchText === '') &&
-         (genre === 'all' || genre === cardGenre)){
-        $(this).show();
-      } else {
-        $(this).hide();
-      }
-    });
-  });
-});
-</script>
 
 </body>
 </html>
