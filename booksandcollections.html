@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books | Simply Revived</title>
+  <title>Books & Collections | Simply Revived</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
 
 <header>
@@ -23,47 +26,97 @@
   </nav>
 </header>
 
-<section>
-  <h2>Browse Our Books</h2>
-  <input type="text" id="bookSearch" placeholder="Search books...">
-  <div class="books-grid" id="bookGrid">
-    <div class="card" data-genre="fiction"><img src="images/book1.jpg" alt="Book 1"><p>Book 1 Description</p></div>
-    <div class="card" data-genre="non-fiction"><img src="images/book2.jpg" alt="Book 2"><p>Book 2 Description</p></div>
-    <div class="card" data-genre="children"><img src="images/book3.jpg" alt="Book 3"><p>Book 3 Description</p></div>
-    <div class="card" data-genre="fiction"><img src="images/book4.jpg" alt="Book 4"><p>Book 4 Description</p></div>
+<section class="page-intro">
+  <h2>Books & Collections</h2>
+  <p>Search and filter through our curated collection of books.</p>
+</section>
+
+<!-- 🔍 Search + Filters -->
+<section class="filters">
+
+  <input type="text" id="searchInput" placeholder="Search books, authors, keywords…">
+
+  <select id="genreFilter">
+    <option value="all">All Genres</option>
+    <option value="fiction">Fiction</option>
+    <option value="mystery">Mystery</option>
+    <option value="romance">Romance</option>
+    <option value="philosophy">Philosophy</option>
+    <option value="history">History</option>
+    <option value="local">Local Authors</option>
+  </select>
+
+</section>
+
+<section class="book-grid">
+
+  <!-- Each card now contains data-genre attributes -->
+  <div class="book-card" data-genre="mystery fiction">
+    <img src="images/book1.jpg" alt="Book cover">
+    <h3>The Lost Pages</h3>
+    <p class="author">Sarah Thompson</p>
+    <p class="description">A gripping mystery exploring forgotten worlds and hidden histories.</p>
   </div>
 
-  <h3>Filter by Genre</h3>
-  <button class="filter-btn" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="fiction">Fiction</button>
-  <button class="filter-btn" data-filter="non-fiction">Non-Fiction</button>
-  <button class="filter-btn" data-filter="children">Children</button>
+  <div class="book-card" data-genre="philosophy">
+    <img src="images/book2.jpg" alt="Book cover">
+    <h3>Journeys of the Mind</h3>
+    <p class="author">Daniel Mokoena</p>
+    <p class="description">A philosophical dive into the human experience and creativity.</p>
+  </div>
+
+  <div class="book-card" data-genre="romance fiction local">
+    <img src="images/book3.jpg" alt="Book cover">
+    <h3>The Café on the Corner</h3>
+    <p class="author">L. Jacobs</p>
+    <p class="description">A warm, heartfelt story set around a small-town café.</p>
+  </div>
+
+  <div class="book-card" data-genre="history fiction">
+    <img src="images/book4.jpg" alt="Book cover">
+    <h3>Echoes of Time</h3>
+    <p class="author">Helena Vos</p>
+    <p class="description">A historical novel weaving past and present together.</p>
+  </div>
+
 </section>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
 
+<!-- 🔎 Filter & Search Script -->
 <script>
-$(document).ready(function(){
-  // Book Search
-  $("#bookSearch").on("keyup", function() {
-    let value = $(this).val().toLowerCase();
-    $("#bookGrid .card").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
+$(document).ready(function() {
 
-  // Genre Filter
-  $(".filter-btn").click(function() {
-    let filter = $(this).data("filter");
-    if(filter === "all") {
-      $("#bookGrid .card").show();
-    } else {
-      $("#bookGrid .card").hide();
-      $("#bookGrid .card[data-genre='" + filter + "']").show();
-    }
-  });
+  function filterBooks() {
+    let search = $("#searchInput").val().toLowerCase();
+    let genre = $("#genreFilter").val();
+
+    $(".book-card").each(function() {
+      let title = $(this).find("h3").text().toLowerCase();
+      let author = $(this).find(".author").text().toLowerCase();
+      let description = $(this).find(".description").text().toLowerCase();
+      let bookGenre = $(this).attr("data-genre");
+
+      let matchesSearch =
+        title.includes(search) ||
+        author.includes(search) ||
+        description.includes(search);
+
+      let matchesGenre =
+        genre === "all" || bookGenre.includes(genre);
+
+      if (matchesSearch && matchesGenre) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
+    });
+  }
+
+  $("#searchInput").on("keyup", filterBooks);
+  $("#genreFilter").on("change", filterBooks);
 });
 </script>
 
