@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Books | Simply Revived</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Books & Collections | Simply Revived</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <!-- Lightbox CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -26,70 +25,61 @@
 </header>
 
 <section class="page-intro">
-  <h2>Our Books</h2>
-  <p>Browse our carefully curated collection of novels, non-fiction, romance, mystery, sci-fi and children's books. Available in-store and online.</p>
+  <h2>Books & Collections</h2>
+  <p>Explore our curated collection of books — fiction, non‑fiction, romance, mystery, and more.</p>
 </section>
 
-<section class="book-search">
-  <input type="text" id="searchInput" placeholder="Search books by title or author...">
+<section class="filters">
+  <input type="text" id="searchInput" placeholder="Search by title or author...">
   <select id="genreFilter">
     <option value="all">All Genres</option>
     <option value="fiction">Fiction</option>
-    <option value="non-fiction">Non-Fiction</option>
+    <option value="nonfiction">Non‑Fiction</option>
     <option value="romance">Romance</option>
     <option value="mystery">Mystery</option>
-    <option value="sci-fi">Sci-Fi</option>
     <option value="children">Children</option>
   </select>
 </section>
 
 <section class="book-grid">
   <div class="book-card" data-genre="fiction">
-    <a href="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Fiction Book">
-      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&q=80" alt="Fiction book">
+    <a href="https://images.unsplash.com/photos/a-close-up-of-a-book-on-a-table-6nJp2Lu58EQ?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Fiction Book">
+      <img src="https://images.unsplash.com/photos/a-close-up-of-a-book-on-a-table-6nJp2Lu58EQ?auto=format&fit=crop&w=400&q=80" alt="Stacked book on table">
     </a>
     <h3>Fiction</h3>
-    <p>Explore imaginative stories from contemporary authors.</p>
+    <p>Imaginative stories that transport you to different worlds.</p>
+  </div>
+
+  <div class="book-card" data-genre="nonfiction">
+    <a href="https://images.unsplash.com/photos/EG9GnUX3Wkw?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Non Fiction Book">
+      <img src="https://images.unsplash.com/photos/EG9GnUX3Wkw?auto=format&fit=crop&w=400&q=80" alt="Non-fiction book cover">
+    </a>
+    <h3>Non‑Fiction</h3>
+    <p>Real stories, biographies and informative reads.</p>
   </div>
 
   <div class="book-card" data-genre="romance">
-    <a href="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Romance Book">
-      <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?auto=format&fit=crop&w=400&q=80" alt="Romance book">
+    <a href="https://images.unsplash.com/photos/a-room-with-shelves-of-books-reYWnfXwrcQ?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Romance Book">
+      <img src="https://images.unsplash.com/photos/a-room-with-shelves-of-books-reYWnfXwrcQ?auto=format&fit=crop&w=400&q=80" alt="Books on a shelf in a cosy room">
     </a>
     <h3>Romance</h3>
-    <p>A collection of love stories to warm your heart.</p>
+    <p>Heartfelt and touching love stories.</p>
   </div>
 
   <div class="book-card" data-genre="mystery">
-    <a href="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Mystery Book">
-      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=400&q=80" alt="Mystery book">
+    <a href="https://images.unsplash.com/photos/a-close-up-of-a-book-shelf-DPLoskgfpxU?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Mystery Book">
+      <img src="https://images.unsplash.com/photos/a-close-up-of-a-book-shelf-DPLoskgfpxU?auto=format&fit=crop&w=400&q=80" alt="Bookshelf close-up with mystery feel">
     </a>
     <h3>Mystery</h3>
-    <p>Twists and turns that will keep you guessing until the last page.</p>
-  </div>
-
-  <div class="book-card" data-genre="sci-fi">
-    <a href="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Sci-Fi Book">
-      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="Sci-Fi book">
-    </a>
-    <h3>Sci-Fi</h3>
-    <p>Futuristic adventures and imaginative worlds to explore.</p>
-  </div>
-
-  <div class="book-card" data-genre="non-fiction">
-    <a href="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Non-Fiction Book">
-      <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=400&q=80" alt="Non-fiction book">
-    </a>
-    <h3>Non-Fiction</h3>
-    <p>Informative and educational reads for curious minds.</p>
+    <p>Whodunits, thrillers and suspenseful tales.</p>
   </div>
 
   <div class="book-card" data-genre="children">
-    <a href="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Children's Book">
-      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=400&q=80" alt="Children's book">
+    <a href="https://images.unsplash.com/photos/a-stack-of-books--LQfvd83i4I?auto=format&fit=crop&w=800&q=80" data-lightbox="books" data-title="Children's Book Stack">
+      <img src="https://images.unsplash.com/photos/a-stack-of-books--LQfvd83i4I?auto=format&fit=crop&w=400&q=80" alt="Stack of colourful children's books">
     </a>
     <h3>Children</h3>
-    <p>Fun and educational stories for young readers.</p>
+    <p>Fun, imaginative stories for young readers.</p>
   </div>
 </section>
 
@@ -97,28 +87,22 @@
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
 
-<!-- Lightbox JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-
 <script>
-// Search and Filter Functionality
 $(document).ready(function(){
-  $('#searchInput, #genreFilter').on('input change', function(){
-    var searchText = $('#searchInput').val().toLowerCase();
-    var genre = $('#genreFilter').val();
-
+  function filterBooks(){
+    const q = $('#searchInput').val().toLowerCase();
+    const genre = $('#genreFilter').val();
     $('.book-card').each(function(){
-      var title = $(this).find('h3').text().toLowerCase();
-      var cardGenre = $(this).data('genre');
-
-      if((title.includes(searchText) || searchText === '') &&
-         (genre === 'all' || genre === cardGenre)){
-        $(this).show();
-      } else {
-        $(this).hide();
-      }
+      const title = $(this).find('h3').text().toLowerCase();
+      const cardGenre = $(this).data('genre');
+      const matchesText = title.includes(q);
+      const matchesGenre = (genre === 'all') || (cardGenre === genre);
+      $(this).toggle(matchesText && matchesGenre);
     });
-  });
+  }
+  $('#searchInput').on('input', filterBooks);
+  $('#genreFilter').on('change', filterBooks);
 });
 </script>
 
