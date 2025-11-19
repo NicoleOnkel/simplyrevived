@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Coffee & Bakery | Simply Revived</title>
+  <meta name="description" content="Enjoy freshly brewed coffee and homemade bakery treats at Simply Revived.">
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -23,19 +24,55 @@
   </nav>
 </header>
 
-<section>
-  <h2>Coffee & Bakery Menu</h2>
-  <div class="books-grid">
-    <div class="card"><img src="images/coffee1.jpg" alt="Cappuccino"><p>Cappuccino</p></div>
-    <div class="card"><img src="images/coffee2.jpg" alt="Latte"><p>Latte</p></div>
-    <div class="card"><img src="images/bakery1.jpg" alt="Croissant"><p>Croissant</p></div>
-    <div class="card"><img src="images/bakery2.jpg" alt="Muffin"><p>Muffin</p></div>
-  </div>
+<section class="page-intro">
+  <h2>Coffee & Bakery</h2>
+  <p>Relax with freshly brewed coffee and freshly baked treats — perfect with a book.</p>
+</section>
+
+<section class="book-grid" style="max-width:1100px; margin:auto;">
+  <article class="book-card">
+    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=80&auto=format&fit=crop" alt="Cappuccino">
+    <h3>Cappuccino</h3>
+    <p class="author">R35</p>
+  </article>
+
+  <article class="book-card">
+    <img src="https://images.unsplash.com/photo-1522184216313-5f392bd7d541?w=900&q=80&auto=format&fit=crop" alt="Latte">
+    <h3>Latte</h3>
+    <p class="author">R32</p>
+  </article>
+
+  <article class="book-card">
+    <img src="https://pixabay.com/illustrations/cookies-biscuits-sweets-food-8668140/" alt="Cookies and biscuits">
+    <!-- note: Pixabay page link used as image src. If the image does not load replace with the direct image URL or use Unsplash alternative -->
+    <h3>Assorted Cookies</h3>
+    <p class="author">R20</p>
+  </article>
+
+  <article class="book-card">
+    <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092?w=900&q=80&auto=format&fit=crop" alt="Chocolate Muffin">
+    <h3>Chocolate Muffin</h3>
+    <p class="author">R28</p>
+  </article>
+
+  <article class="book-card">
+    <img src="https://images.unsplash.com/photo-1565958011702-44b2f28c641b?w=900&q=80&auto=format&fit=crop" alt="Cheesecake">
+    <h3>Classic Cheesecake</h3>
+    <p class="author">R45</p>
+  </article>
 </section>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
+
+<!-- optional small hover script -->
+<script>
+  $(".book-card").hover(
+    function(){ $(this).css("transform","scale(1.03)"); },
+    function(){ $(this).css("transform","scale(1)"); }
+  );
+</script>
 
 </body>
 </html>

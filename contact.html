@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact | Simply Revived</title>
+  <meta name="description" content="Contact Simply Revived — get in touch, visit the store or send an enquiry.">
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -23,36 +24,39 @@
   </nav>
 </header>
 
-<section>
-  <h2>Contact Us</h2>
-  <p>Email: <a href="mailto:info@simplyrevived.co.za">info@simplyrevived.co.za</a></p>
-  <p>Phone: +27 12 345 6789</p>
-  <p>Address: 123 Book Street, Cape Town, South Africa</p>
+<section class="page-intro">
+  <h2>Contact Simply Revived</h2>
+  <p>We’d love to hear from you — enquiries, bookings or feedback.</p>
+</section>
 
-  <!-- Google Map -->
-  <div class="map-container" style="margin:20px 0;">
+<section style="max-width:1000px;margin:auto;padding:0 20px;">
+
+  <h3>Visit or Call</h3>
+  <p>Email: <a href="mailto:info@simplyrevived.co.za">info@simplyrevived.co.za</a><br>Phone: +27 12 345 6789</p>
+
+  <!-- GOOGLE MAP (Cape Town) -->
+  <div style="width:100%;height:420px;margin:12px 0;">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.123456789012!2d18.4241!3d-33.9249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1!2sSimply%20Revived!5e0!3m2!1sen!2sza!4v1699999999999"
-      width="100%"
-      height="400"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3303.123456789012!2d18.417363515258776!3d-33.9258399806168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc5d4b0b1b3b3b%3A0x0000000000000000!2sCape%20Town!5e0!3m2!1sen!2sza!4v1600000000000!5m2!1sen!2sza"
+      width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </div>
 
   <h3>Send Us a Message / Enquiry</h3>
+
   <form id="contactForm">
-    <input type="text" name="name" id="name" placeholder="Your Name" required>
-    <input type="email" name="email" id="email" placeholder="Your Email" required>
-    <input type="text" name="subject" id="subject" placeholder="Subject" required>
-    <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+    <input type="text" id="name" name="name" placeholder="Your name" required>
+    <input type="email" id="email" name="email" placeholder="Your email" required>
+    <input type="text" id="subject" name="subject" placeholder="Subject" required>
+    <textarea id="message" name="message" placeholder="Your message" required></textarea>
+
+    <!-- Honeypot -->
+    <input type="text" name="website" style="display:none;" tabindex="-1" autocomplete="off">
+
     <button type="submit" class="btn">Send Message</button>
-    <!-- Honeypot for spam -->
-    <input type="text" name="website" style="display:none;">
   </form>
-  <div id="formMessage" style="margin-top:10px;"></div>
+
+  <div id="formMessage" style="margin-top:12px;"></div>
 </section>
 
 <footer>
@@ -60,48 +64,39 @@
 </footer>
 
 <script>
-$(document).ready(function() {
+$(function(){
 
-  $('#contactForm').submit(function(e) {
+  $('#contactForm').on('submit', function(e){
     e.preventDefault();
-    $('#formMessage').html('');
+    $('#formMessage').text('');
 
-    let name = $('#name').val().trim();
-    let email = $('#email').val().trim();
-    let subject = $('#subject').val().trim();
-    let message = $('#message').val().trim();
-    let honeypot = $('[name="website"]').val();
+    // Gather values
+    const name = $('#name').val().trim();
+    const email = $('#email').val().trim();
+    const subject = $('#subject').val().trim();
+    const message = $('#message').val().trim();
+    const honeypot = $('[name="website"]').val();
 
-    let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if(honeypot !== "") {
-      $('#formMessage').html('<span style="color:red;">Spam detected.</span>');
-      return;
-    }
+    if(honeypot) { $('#formMessage').html('<span style="color:red;">Spam detected.</span>'); return; }
+    if(!name || !email || !subject || !message) { $('#formMessage').html('<span style="color:red;">Please complete all fields.</span>'); return; }
+    if(!emailRegex.test(email)) { $('#formMessage').html('<span style="color:red;">Please enter a valid email.</span>'); return; }
 
-    if(name === '' || email === '' || subject === '' || message === '') {
-      $('#formMessage').html('<span style="color:red;">All fields are required.</span>');
-      return;
-    }
-
-    if(!emailRegex.test(email)) {
-      $('#formMessage').html('<span style="color:red;">Please enter a valid email address.</span>');
-      return;
-    }
-
+    // AJAX send to server script (contact-process.php)
     $.ajax({
       url: 'contact-process.php',
-      type: 'POST',
+      method: 'POST',
       data: { name, email, subject, message },
-      beforeSend: function() {
-        $('#formMessage').html('<span style="color:blue;">Sending message...</span>');
-      },
-      success: function(response) {
-        $('#formMessage').html('<span style="color:green;">'+response+'</span>');
+      beforeSend: function(){ $('#formMessage').html('<span style="color:blue;">Sending message...</span>'); },
+      success: function(resp){
+        $('#formMessage').html('<span style="color:green;">' + resp + '</span>');
         $('#contactForm')[0].reset();
       },
-      error: function() {
-        $('#formMessage').html('<span style="color:red;">There was an error sending your message. Please try again later.</span>');
+      error: function(xhr){
+        let text = 'There was an error sending your message. Please try again later.';
+        if(xhr.responseText) text = xhr.responseText;
+        $('#formMessage').html('<span style="color:red;">' + text + '</span>');
       }
     });
 

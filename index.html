@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Simply Revived</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simply Revived | Bookstore & Coffee</title>
+  <meta name="description" content="Simply Revived — a cosy bookstore & café in Cape Town offering curated books, coffee, bakery treats and community events.">
+  <meta name="author" content="Simply Revived">
   <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -23,26 +25,54 @@
   </nav>
 </header>
 
-<section class="hero">
+<!-- HERO -->
+<section class="page-intro" style="padding-top:30px;">
   <h2>Welcome to Simply Revived</h2>
-  <p>Your neighborhood bookstore with a cozy coffee corner.</p>
-  <a href="booksandcollections.html" class="btn">Shop Books</a>
+  <p>Your neighbourhood bookstore where stories, coffee and community meet.</p>
+  <a class="btn" href="booksandcollections.html">Browse Books</a>
 </section>
 
-<section id="books">
-  <h2>Our Featured Books</h2>
-  <div class="books-grid">
-    <div class="card"><img src="images/book1.jpg" alt="Book 1"><p>Book 1 Description</p></div>
-    <div class="card"><img src="images/book2.jpg" alt="Book 2"><p>Book 2 Description</p></div>
-    <div class="card"><img src="images/book3.jpg" alt="Book 3"><p>Book 3 Description</p></div>
+<!-- FEATURED -->
+<section>
+  <h2 style="text-align:center; margin-top:10px;">Featured This Month</h2>
+  <div class="book-grid" style="max-width:1000px; margin:auto;">
+    <article class="book-card">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=900&q=80&auto=format&fit=crop" alt="Featured book 1">
+      <h3>The Silent Pages</h3>
+      <p class="author">Sarah Thompson</p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?w=900&q=80&auto=format&fit=crop" alt="Featured book 2">
+      <h3>Hearts in Bloom</h3>
+      <p class="author">L. Rivers</p>
+    </article>
+
+    <article class="book-card">
+      <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=900&q=80&auto=format&fit=crop" alt="Featured book 3">
+      <h3>Shadows of the Night</h3>
+      <p class="author">M. Khumalo</p>
+    </article>
   </div>
 </section>
 
-<section id="coffee">
-  <h2>Coffee & Bakery</h2>
-  <div class="books-grid">
-    <div class="card"><img src="images/coffee1.jpg" alt="Cappuccino"><p>Freshly brewed cappuccino</p></div>
-    <div class="card"><img src="images/bakery1.jpg" alt="Croissant"><p>Homemade croissant</p></div>
+<!-- CAFE PREVIEW -->
+<section>
+  <h2 style="text-align:center;">Café & Bakery</h2>
+  <div class="book-grid" style="max-width:900px; margin:auto;">
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=900&q=80&auto=format&fit=crop" alt="Cappuccino">
+      <h3>Cappuccino</h3>
+      <p class="author">Freshly brewed, single origin espresso</p>
+    </div>
+    <div class="book-card">
+      <img src="https://images.unsplash.com/photo-1601924582975-0545c1e75e86?w=900&q=80&auto=format&fit=crop" alt="Croissant">
+      <h3>Butter Croissant</h3>
+      <p class="author">Baked fresh each morning</p>
+    </div>
+  </div>
+  <div style="text-align:center; margin-top:14px;">
+    <a class="btn" href="cafeandmenu.html">View Menu</a>
   </div>
 </section>
 
