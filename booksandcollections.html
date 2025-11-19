@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Books & Collections | Simply Revived</title>
 
   <!-- CSS -->
@@ -11,7 +11,6 @@
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
-
 <body>
 
 <header>
@@ -30,140 +29,149 @@
 
 <section class="page-intro">
   <h2>Books & Collections</h2>
-  <p>Search and filter through our curated collection of books.</p>
+  <p>Search, filter and explore our curated selection — click any cover to zoom.</p>
 </section>
 
 <!-- Search + Filter -->
 <section class="filters">
-  <input type="text" id="searchInput" placeholder="Search books, authors, keywords…">
-
+  <input id="searchInput" type="text" placeholder="Search books, authors, keywords…" />
   <select id="genreFilter">
     <option value="all">All Genres</option>
     <option value="fiction">Fiction</option>
-    <option value="mystery">Mystery</option>
+    <option value="nonfiction">Non-fiction</option>
     <option value="romance">Romance</option>
-    <option value="philosophy">Philosophy</option>
-    <option value="history">History</option>
+    <option value="mystery">Mystery / Thriller</option>
+    <option value="scifi">Sci-Fi / Fantasy</option>
+    <option value="selfhelp">Self-Help</option>
+    <option value="biography">Biography</option>
+    <option value="children">Children</option>
     <option value="local">Local Authors</option>
   </select>
 </section>
 
-<!-- BOOK GRID -->
-<section class="book-grid">
+<!-- Books grid -->
+<section class="book-grid" id="bookGrid">
 
-  <div class="book-card" data-genre="mystery fiction">
-    <img src="images/book1.jpg" class="lightbox-img" alt="Book cover">
-    <h3>The Lost Pages</h3>
+  <!-- Card 1 -->
+  <article class="book-card" data-genre="fiction">
+    <button class="img-btn" aria-label="Open image">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800&q=80&auto=format&fit=crop" alt="Stack of books on a table">
+    </button>
+    <h3>The Silent Pages</h3>
     <p class="author">Sarah Thompson</p>
-    <p class="description">A gripping mystery exploring forgotten worlds.</p>
-  </div>
+    <p class="description">A modern literary novel about memory, place and small-town mysteries.</p>
+  </article>
 
-  <div class="book-card" data-genre="philosophy">
-    <img src="images/book2.jpg" class="lightbox-img" alt="Book cover">
-    <h3>Journeys of the Mind</h3>
-    <p class="author">Daniel Mokoena</p>
-    <p class="description">A philosophical dive into creativity and consciousness.</p>
-  </div>
+  <!-- Card 2 (Romance) -->
+  <article class="book-card" data-genre="romance">
+    <button class="img-btn" aria-label="Open image">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1526318472351-bc6f4c9f1fb0?w=800&q=80&auto=format&fit=crop" alt="Romance book cover">
+    </button>
+    <h3>Hearts in Bloom</h3>
+    <p class="author">L. Rivers</p>
+    <p class="description">A tender romance set in the slow, sunlit streets of a coastal town.</p>
+  </article>
 
-  <div class="book-card" data-genre="romance fiction local">
-    <img src="images/book3.jpg" class="lightbox-img" alt="Book cover">
-    <h3>The Café on the Corner</h3>
-    <p class="author">L. Jacobs</p>
-    <p class="description">A heartwarming small-town romance.</p>
-  </div>
+  <!-- Card 3 (Mystery) -->
+  <article class="book-card" data-genre="mystery">
+    <button class="img-btn" aria-label="Open image">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1532012197267-da84d127e765?w=800&q=80&auto=format&fit=crop" alt="Mystery novel cover">
+    </button>
+    <h3>Shadows of the Night</h3>
+    <p class="author">M. Khumalo</p>
+    <p class="description">A page-turning thriller where secrets from the past resurface.</p>
+  </article>
 
-  <div class="book-card" data-genre="history fiction">
-    <img src="images/book4.jpg" class="lightbox-img" alt="Book cover">
-    <h3>Echoes of Time</h3>
-    <p class="author">Helena Vos</p>
-    <p class="description">A historical novel weaving past and present.</p>
-  </div>
+  <!-- Card 4 (Sci-Fi) -->
+  <article class="book-card" data-genre="scifi">
+    <button class="img-btn" aria-label="Open image">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80&auto=format&fit=crop" alt="Sci-fi book cover">
+    </button>
+    <h3>Galactic Drift</h3>
+    <p class="author">A. Patel</p>
+    <p class="description">An interstellar adventure about crew, courage and the unknown.</p>
+  </article>
 
+  <!-- Card 5 (Non-fiction) -->
+  <article class="book-card" data-genre="nonfiction">
+    <button class="img-btn" aria-label="Open image">
+      <img class="gallery-item" src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=800&q=80&auto=format&fit=crop" alt="Non-fiction book">
+    </button>
+    <h3>The Real Story</h3>
+    <p class="author">K. Ndlovu</p>
+    <p class="description">Investigative non-fiction exploring social change and resilience.</p>
+  </article>
+
+  <!-- add more cards as needed -->
 </section>
 
-<!-- LIGHTBOX OVERLAY -->
-<div id="lightboxOverlay">
-  <span id="closeLightbox">&times;</span>
-  <img id="lightboxImage" src="">
-  <div id="lightboxPrev" class="lightbox-nav">&#10094;</div>
-  <div id="lightboxNext" class="lightbox-nav">&#10095;</div>
+<!-- Lightbox overlay -->
+<div id="lightboxOverlay" aria-hidden="true">
+  <button id="lightboxClose" aria-label="Close (Esc)">&times;</button>
+  <button id="lightboxPrev" class="nav" aria-label="Previous (Left)">&larr;</button>
+  <img id="lightboxImg" alt="Expanded cover">
+  <button id="lightboxNext" class="nav" aria-label="Next (Right)">&rarr;</button>
 </div>
 
 <footer>
   <p>&copy; 2025 Simply Revived. All Rights Reserved.</p>
 </footer>
 
-<!-- FILTER + SEARCH SCRIPT -->
+<!-- Search & filter behaviour -->
 <script>
-$(document).ready(function () {
-
-  function filterBooks() {
-    let search = $("#searchInput").val().toLowerCase();
-    let genre = $("#genreFilter").val();
-
-    $(".book-card").each(function () {
-      let title = $(this).find("h3").text().toLowerCase();
-      let author = $(this).find(".author").text().toLowerCase();
-      let description = $(this).find(".description").text().toLowerCase();
-      let bookGenre = $(this).attr("data-genre");
-
-      let matchesSearch =
-        title.includes(search) ||
-        author.includes(search) ||
-        description.includes(search);
-
-      let matchesGenre =
-        genre === "all" || bookGenre.includes(genre);
-
-      if (matchesSearch && matchesGenre) {
-        $(this).show();
-      } else {
-        $(this).hide();
-      }
+$(function(){
+  function updateFilter(){
+    let q = $('#searchInput').val().toLowerCase();
+    let genre = $('#genreFilter').val();
+    $('.book-card').each(function(){
+      const title = $(this).find('h3').text().toLowerCase();
+      const author = $(this).find('.author').text().toLowerCase();
+      const desc = $(this).find('.description').text().toLowerCase();
+      const genres = $(this).attr('data-genre') || '';
+      const matchesText = (title + ' ' + author + ' ' + desc).indexOf(q) !== -1;
+      const matchesGenre = (genre === 'all') || genres.split(' ').includes(genre);
+      $(this).toggle(matchesText && matchesGenre);
     });
   }
 
-  $("#searchInput").on("keyup", filterBooks);
-  $("#genreFilter").on("change", filterBooks);
+  $('#searchInput').on('input', updateFilter);
+  $('#genreFilter').on('change', updateFilter);
 
-});
-</script>
-
-<!-- LIGHTBOX SCRIPT -->
-<script>
-$(document).ready(function () {
-  let images = $(".lightbox-img");
-  let currentIndex = 0;
-
-  images.click(function () {
-    currentIndex = images.index(this);
-    showImage();
+  // Accessibility: allow Enter on image buttons to open
+  $('.img-btn').on('click keypress', function(e){
+    if(e.type === 'click' || e.key === 'Enter') {
+      const index = $('.gallery-item').index($(this).find('.gallery-item'));
+      openLightbox(index);
+    }
   });
 
-  function showImage() {
-    $("#lightboxImage").attr("src", images.eq(currentIndex).attr("src"));
-    $("#lightboxOverlay").fadeIn(300);
+  // Lightbox logic
+  const items = $('.gallery-item');
+  let current = 0;
+  function openLightbox(i){
+    current = i;
+    $('#lightboxImg').attr('src', items.eq(current).attr('src'));
+    $('#lightboxOverlay').fadeIn(200).attr('aria-hidden','false');
+    $('body').css('overflow','hidden');
   }
+  function closeLightbox(){
+    $('#lightboxOverlay').fadeOut(200).attr('aria-hidden','true');
+    $('body').css('overflow','auto');
+  }
+  function prevImg(){ current = (current - 1 + items.length) % items.length; $('#lightboxImg').attr('src', items.eq(current).attr('src')); }
+  function nextImg(){ current = (current + 1) % items.length; $('#lightboxImg').attr('src', items.eq(current).attr('src')); }
 
-  $("#closeLightbox").click(function () {
-    $("#lightboxOverlay").fadeOut(300);
-  });
+  $('#lightboxClose').on('click', closeLightbox);
+  $('#lightboxPrev').on('click', prevImg);
+  $('#lightboxNext').on('click', nextImg);
 
-  $("#lightboxNext").click(function () {
-    currentIndex = (currentIndex + 1) % images.length;
-    showImage();
-  });
-
-  $("#lightboxPrev").click(function () {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    showImage();
-  });
-
-  // Close on ESC key
-  $(document).keydown(function (e) {
-    if (e.key === "Escape") $("#lightboxOverlay").fadeOut(300);
-    if (e.key === "ArrowRight") $("#lightboxNext").click();
-    if (e.key === "ArrowLeft") $("#lightboxPrev").click();
+  // keyboard
+  $(document).on('keydown', function(e){
+    if($('#lightboxOverlay').is(':visible')) {
+      if(e.key === 'Escape') closeLightbox();
+      if(e.key === 'ArrowLeft') prevImg();
+      if(e.key === 'ArrowRight') nextImg();
+    }
   });
 });
 </script>
