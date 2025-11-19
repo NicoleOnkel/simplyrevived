@@ -70,6 +70,8 @@ C:\Users\RC_Student_Lab\Desktop\simplyrevived\img\Screenshot_20250927_203932_com
 -Contact page updated with Enquire and contact Form and is made secure - with AJAX submissions
 -php file added for security
 -Gallery lightbox added
+-Broken images fixed
+
 
 
 References:
